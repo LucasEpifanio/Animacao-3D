@@ -1,0 +1,79 @@
+body{
+    background-color: #101010;
+}
+.cards{
+    perspective: 900px;
+}
+.card{
+    width: 350px;
+    height: 220px;
+    background: url('perfil.jpg') center no-repeat;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-size: cover;
+    border: 1px solid;
+    border-radius: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: .15s;
+    cursor: pointer;
+    top: 20px;
+}
+.card:hover{
+    transform: translateZ(10px) rotateX(20deg) rotateY(30deg);
+}
+.card-title{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(235, 235, 235);
+    position: absolute;
+    top: 80%;
+    right: 28px;
+    transform: translateY(-50%);
+    transition: transform .15s;
+}
+.card:hover .card-title{
+    transform: translateZ(50px);
+}
+button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 15px 30px;
+    border: none;
+    position: relative;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #046988;
+    border-radius: 5px;
+    min-width: 200px;
+    color: rgb(252, 252, 252);
+    z-index: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+button::before{
+    content:'';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: -50px;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient( 
+        90deg, transparent, #ffffff75,transparent);
+    transition: all 1s;
+    z-index: -1;
+    transform: translateX(-120px) skew(-20deg);
+} 
+button:hover::before{
+    transform: translateX(300px) skew(-20deg);
+    
+}
+button:hover{
+    background: #1193d3;
+}
